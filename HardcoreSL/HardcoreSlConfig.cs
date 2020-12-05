@@ -48,5 +48,9 @@ namespace HardcoreSL
         // Light Blacking Out
         [Description("Enables the Delayed Blackout.")]
         public float BlackoutDuration { get; set; } = 60f;
+
+        // Chaos Message
+        [Description("Chaos-only Message.")]
+        public string ChaosOnlyMessage { get; set; } = "Chaos Insurgency Forces and SCP Subjects solely remain. Finish this.";
     }
 }

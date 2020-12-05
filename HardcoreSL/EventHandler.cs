@@ -35,13 +35,13 @@ namespace HardcoreSL
             bool anyOtherAlive = alive.All(x => x.Team == Team.SCP || x.Team == Team.CHI);
             bool allScps = alive.All(x => x.Team == Team.SCP);
             int amountAlive = alive.Count(x => x.Team != Team.SCP);
-            if (anyOtherAlive)
-                return;
             if (allScps)
+                return;
+            if (!anyOtherAlive)
                 return;
             if (!respawnHappened)
                 return;
-            Server.Broadcast.RpcAddElement("Chaos Insurgency Forces and SCP Subjects solely remain. Finish this.", 10, Broadcast.BroadcastFlags.Normal);
+            Server.Broadcast.RpcAddElement(_plugin.Config.ChaosOnlyMessage, 10, Broadcast.BroadcastFlags.Normal);
             respawnHappened = false;
         }
 
