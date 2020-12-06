@@ -12,7 +12,7 @@ namespace HardcoreSL
 
         public override string Name => "Hardcore SCP:SL";
 
-        public override Version Version => new Version(0, 6, 9);
+        public override Version Version => new Version(1, 0, 0);
 
         private EventHandler _events;
 
