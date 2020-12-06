@@ -47,6 +47,9 @@ namespace HardcoreSL
 
         // Light Blacking Out
         [Description("Enables the Delayed Blackout.")]
+        public bool EnableBlackout { get; set; } = true;
+
+        [Description("How long until the next blackout begins.")]
         public float BlackoutDuration { get; set; } = 60f;
 
         // Chaos Message

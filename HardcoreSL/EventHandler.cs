@@ -26,10 +26,10 @@ namespace HardcoreSL
 
         internal void Died(DiedEventArgs ev)
         {
-            CheckRemaining(ev.Target);
+            CheckRemaining();
         }
 
-        private void CheckRemaining(Player died)
+        private void CheckRemaining()
         {
             List<Player> alive = Player.List.Where(x => x.IsAlive).ToList();
             bool anyOtherAlive = alive.All(x => x.Team == Team.SCP || x.Team == Team.CHI);
@@ -61,6 +61,8 @@ namespace HardcoreSL
 
         internal void BeginLight()
         {
+            if (!_plugin.Config.EnableBlackout)
+                return;
             _plugin.LightHandle = Timing.RunCoroutine(FlickLights());
         }
 
