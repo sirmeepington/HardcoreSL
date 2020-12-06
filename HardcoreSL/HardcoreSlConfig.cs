@@ -53,7 +53,7 @@ namespace HardcoreSL
         public float BlackoutDuration { get; set; } = 60f;
 
         // Chaos Message
-        [Description("Chaos-only Message.")]
+        [Description("Chaos-only Message. Set to 'none' to disable.")]
         public string ChaosOnlyMessage { get; set; } = "Chaos Insurgency Forces and SCP Subjects solely remain. Finish this.";
     }
 }

@@ -31,6 +31,9 @@ namespace HardcoreSL
 
         private void CheckRemaining()
         {
+            if (string.IsNullOrEmpty(_plugin.Config.ChaosOnlyMessage) || _plugin.Config.ChaosOnlyMessage.Equals("none", StringComparison.OrdinalIgnoreCase))
+                return;
+
             List<Player> alive = Player.List.Where(x => x.IsAlive).ToList();
             bool anyOtherAlive = alive.All(x => x.Team == Team.SCP || x.Team == Team.CHI);
             bool allScps = alive.All(x => x.Team == Team.SCP);
